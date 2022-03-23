@@ -1,11 +1,9 @@
-console.log("game logic is being built!");
-
 const game = {
   active: true,
   board: ["", "", "", "", "", "", "", "", ""], // storing the inital game board in an array of blank characters of length 9
+  weapon: "X",
   winner: "",
   turn: 1,
-  weapon: "X",
   winConditions: [
     // nested array to store the index which need to be same to win the game
     [0, 1, 2],
@@ -17,7 +15,7 @@ const game = {
     [0, 4, 8],
     [2, 4, 6],
   ],
-  scoreTracker: { X: 0, O: 0, Draws: 0 },
+  scoreTracker: { X: 0, O: 0, Draw: 0 },
   weaponSetter: function () {
     if (this.turn % 2 === 0) {
       this.weapon = "O";

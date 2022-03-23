@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Monoton&family=Permanent+Marker&family=Recursive&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Merriweather+Sans&family=Monoton&family=Permanent+Marker&family=Recursive&display=swap");
 
 .container {
   box-sizing: content-box;
@@ -8,24 +8,43 @@
 }
 h1 {
   font-family: "Monoton", cursive;
-  font-size: 4.5em;
-  margin: 0.25em 0 0 0;
+  font-size: 4em;
+  margin: 0.15em 0 0 0;
 }
 
 h3 {
   color: #e75c43;
-  font-family: "Permanent Marker", cursive;
+  font-family: "Indie Flower", cursive;
   margin: 0 auto;
   text-align: center;
-  font-size: 2em;
-  padding: 4px;
+  font-size: 1.75em;
+  margin-bottom: 2px;
 }
 
 .score-tracker {
-  color: rgb(119, 108, 107);
-  font-family: "Merriweather Sans", sans-serif;
-  font-size: 1.1em;
+  display: grid;
+
+  font-size: 1.2em;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0.5rem auto;
+  width: 9.4rem;
 }
+
+.score {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: rgba(255, 102, 0, 0.801);
+  font-family: "Permanent Marker", cursive;
+  font-weight: 600;
+}
+
+.score-name {
+  color: rgb(53, 49, 49);
+}
+
+/* .score-x, .score-o, .score-draw{
+  font-size: 1.2em;
+} */
 
 .game-board {
   display: grid;
@@ -34,10 +53,13 @@ h3 {
   row-gap: 0.5rem;
   grid-template-rows: repeat(3, 1fr);
   width: 22.875rem;
-  margin: 2rem auto;
+  margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
 .game-cell {
+  transition: 1s;
+  transition-timing-function: ease-out;
   width: 7.5rem;
   height: 7.5rem;
   border: 2.5px solid #c08585;
@@ -47,12 +69,19 @@ h3 {
   cursor: pointer;
 }
 
+.game-cell:hover {
+  transition: 0.5s;
+  transition-timing-function: ease-in;
+  border-radius: 20px;
+  background-color: #d69a9a;
+}
+
 .result {
   color: #e75c43;
-  font-family: "Recursive", sans-serif;
+  font-family: "Indie Flower", cursive;
   margin: 0 auto;
   text-align: center;
-  font-size: 2.5em;
+  font-size: 2em;
   padding: 0.1em;
 }
 
