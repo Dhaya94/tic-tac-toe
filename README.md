@@ -1,8 +1,8 @@
 # **_Tic-Tac-Toe_**
 
-### You can play the game at: https://dhaya94.github.io/tic-tac-toe/
+Welcome to my Tic-Tac-Toe game!
 
-<br>
+#### You can play it [here](https://dhaya94.github.io/tic-tac-toe/)
 
 ## **Overview**
 
@@ -29,8 +29,6 @@ The HARD mode is currently WIP and desired to be implemented, hence it is curren
 - Developing the HARD Mode AI using the Minimax Algorithm
 - Manage display of results more seamlessly, currently it is jerky
 - Customise tokens instead of X and Os
-
-  <br>
 
 ## **Reflections**
 
