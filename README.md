@@ -34,8 +34,7 @@ The HARD mode is currently WIP and desired to be implemented, hence it is curren
 
 ## **Reflections**
 
+This was a simple game built for Project 0 at SEIR-52 GA,
 I enjoyed putting together this project, making the HTML, CSS and JS working together to manage the different UI states was gratifying.
 
-Refactoring the code to make it as "DRY" as possible was a tricky albeit enjoyable expereince.
-
-I spent a lot of time on this project working on the HARD mode using the MiniMax logic. It was a challenging concept to grasp for me at this stage, and hence nothing to show in the form of code (to be rectified soon!), neverthless onto bigger things for now.
+Refactoring the code to make it as "DRY" as possible was a tricky but fun process.
