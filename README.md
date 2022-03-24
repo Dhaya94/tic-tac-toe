@@ -36,3 +36,5 @@ This was a simple game built for Project 0 at SEIR-52 GA,
 I enjoyed putting together this project, making the HTML, CSS and JS working together to manage the different UI states was gratifying.
 
 Refactoring the code to make it as "DRY" as possible was a tricky but fun process.
+
+The most challenging piece was working on the **HARD** mode using the Minimax algo. It is in my future plans to implement an AI which only wins or ties the game.
