@@ -1,6 +1,7 @@
 const game = {
   active: true,
   board: ["", "", "", "", "", "", "", "", ""], // storing the inital game board in an array of blank characters of length 9
+  mode: "",
   weapon: "X",
   winner: "",
   turn: 1,
@@ -41,6 +42,25 @@ const game = {
       }
     }
     return gameWon;
+  },
+  easyModeMove: function () {
+    while (this.active && this.turn < 9 && this.mode === "easy") {
+      let easyModeIndex = Math.floor(Math.random() * 9);
+      let emptySpaceIndexes = this.board.reduce((acc, el, index) => {
+        // fetching the indexes of blank spaces in game board
+        if (el === "") {
+          acc.push(index);
+        }
+        return acc;
+      }, []);
+
+      if (emptySpaceIndexes.includes(easyModeIndex)) {
+        this.turn++;
+        this.weaponSetter();
+        this.board[easyModeIndex] = this.weapon; // updating game.board arr with computer turn
+        return easyModeIndex;
+      }
+    }
   },
   resetBoard: function () {
     this.board.fill(""); //  filling the game board arr with blank characters
