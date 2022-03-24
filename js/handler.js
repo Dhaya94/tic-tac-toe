@@ -72,7 +72,7 @@ $(document).ready(function () {
   });
 
   $(".hard").click(function () {
-    modeSetter(".hard");
+    $(".mode-btn").removeClass("selected-btn");
   });
 
   $("[data-id]").click(function (event) {
@@ -107,7 +107,7 @@ $(document).ready(function () {
 
         game.turn++;
         game.weaponSetter(); // swapping the X and O
-        currentPlayerSetter(); // chaging the current player
+        currentPlayerSetter(); // chaging the current player for display
       }
     }
   });

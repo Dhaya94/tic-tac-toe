@@ -147,11 +147,6 @@ h3 {
   top: 1px;
 }
 
-.reset-mode {
-  font-size: 1.1em;
-}
-
-.reset-mode:hover,
 .reset-btn:hover {
   background-color: #ffffff;
   background: none;
