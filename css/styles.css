@@ -157,6 +157,29 @@ h3 {
   box-shadow: none;
 }
 
-#disabled:hover {
-  cursor: not-allowed;
+@media (max-width: 400px) {
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 0.2rem;
+    row-gap: 0.2rem;
+    grid-template-rows: repeat(3, 1fr);
+    width: 16rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+  .game-cell {
+    width: 5rem;
+    height: 5rem;
+    line-height: 4.5rem;
+    font-size: 2.8em;
+  }
+
+  .btn {
+    display: block;
+    margin: 10px auto;
+    font-size: 1em;
+    padding: 4px 10px;
+    border-radius: 10px;
+  }
 }

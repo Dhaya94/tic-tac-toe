@@ -21,13 +21,11 @@ Currently there are two modes:
 
 1. VERSUS mode - where humans play against each other
 2. EASY mode - Automatic filling of the empty grid positions selected randomly
-
-The HARD mode is currently WIP and desired to be implemented, hence it is currently disbaled.
+3. HARD mode - The computer move is chosen based on the result of the minimax function to ensure the game is either won or tied
 
 ## **To Do**
 
-- Developing the HARD Mode AI using the Minimax Algorithm
-- Manage display of results more seamlessly, currently it is jerky
+- Manage display of results more seamlessly, currently it is slightly jerky
 - Customise tokens instead of X and Os
 
 ## **Reflections**
@@ -37,4 +35,4 @@ I enjoyed putting together this project, making the HTML, CSS and JS working tog
 
 Refactoring the code to make it as "DRY" as possible was a tricky but fun process.
 
-The most challenging piece was working on the **HARD** mode using the Minimax algo. It is in my future plans to implement an AI which only wins or ties the game.
+The most challenging piece was working on the **HARD** mode using the Minimax algo. Decoding how the recursive functions worked during each function call was a tremendous learning experience.

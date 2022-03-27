@@ -38,8 +38,10 @@ const scoresUpdater = function (result) {
 
 const winStateUpdater = function () {
   game.scoreTracker[game.winner]++; // incrementing the games won for the winning player
-  resultDisplayer(`The winner is Player ${game.winner}`);
-  scoresUpdater(game.winner); // passing the value of winner as a  string to the scoreUpdater function
+  setTimeout(function () {
+    resultDisplayer(`The winner is Player ${game.winner}`);
+    scoresUpdater(game.winner); // passing the value of winner as a  string to the scoreUpdater function
+  }, 200);
   game.active = false;
 };
 
@@ -55,9 +57,18 @@ const drawStateUpdater = function () {
 const reMatchFunc = function () {
   $("[data-id]").text(""); // clearing the game board
   $(".result").remove(); // removing the result div
-  game.resetBoard(); // calling the resetBoard method of the game object
+  game.clearBoard(); // calling the clearBoard method of the game object
   currentPlayerSetter(); // setting the current player for the next game
   game.active = true; // resetting game.active to true for the next game
+};
+
+const reset = function () {
+  reMatchFunc();
+  game.scoreTracker = { X: 0, O: 0, Draw: 0 };
+  // Updating the UI of the scoreboard for X, O and Draw
+  scoresUpdater("X");
+  scoresUpdater("O");
+  scoresUpdater("Draw");
 };
 
 $(document).ready(function () {
@@ -72,7 +83,7 @@ $(document).ready(function () {
   });
 
   $(".hard").click(function () {
-    $(".mode-btn").removeClass("selected-btn");
+    modeSetter(".hard");
   });
 
   $("[data-id]").click(function (event) {
@@ -88,9 +99,16 @@ $(document).ready(function () {
         if (game.winChecker()) {
           // checking if the game is won after each player turn
           winStateUpdater();
-        } else {
+        } else if (game.mode === "easy") {
           // play ai turn
           let nextIndex = game.easyModeMove();
+          $(`[data-id=${nextIndex}]`).text(game.weapon);
+          if (game.winChecker()) {
+            // checking if the game is won after each player turn
+            winStateUpdater(); // Update the winning result
+          }
+        } else if (game.mode === "hard") {
+          let nextIndex = game.hardModeMove();
           $(`[data-id=${nextIndex}]`).text(game.weapon);
           if (game.winChecker()) {
             // checking if the game is won after each player turn
@@ -105,14 +123,17 @@ $(document).ready(function () {
           }
         }
 
-        game.turn++;
+        game.turn++; // incrementing the turn varibale for every turn
         game.weaponSetter(); // swapping the X and O
-        currentPlayerSetter(); // chaging the current player for display
+        currentPlayerSetter(); // chaging the current player
       }
     }
   });
 
   $(".rematch").click(function () {
     reMatchFunc();
+  });
+  $(".reset-all").click(function () {
+    reset();
   });
 });
